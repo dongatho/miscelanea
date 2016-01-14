@@ -24,12 +24,14 @@ public class FolderMain {
 //		String fileName = "W1-Front-end Web UI Frameworks Overview Bootstrap.txt";
 		String path = "C://borrar";
 
+		
 		String structs[] = {
-				"W1-Front-end Web UI Frameworks Overview Bootstrap.txt",
-				"W2 - Bootstrap CSS Components.txt",
-				"W3 - Bootstrap Javascript Components.txt",
-				"W4 - Web Tools.txt" };
-
+				"-W1 Machine Learning Foundations.txt",
+				"-W2 Classification Tools and Techniques.txt",
+				"-W3 Associaton Rule Learning.txt",
+				"-W4 Clustering Analysis.txt" 
+				};
+		
 		for(String file: structs){
 			buildFolderTreeTMP(file, path);	
 		}
@@ -68,7 +70,8 @@ public class FolderMain {
 				if (endIndex != -1) {
 					levelInd = line.substring(0, endIndex);
 					// System.out.println("levelInd = " + levelInd);
-
+					
+					System.out.println("key = " + levelInd);
 					map.put(levelInd, new Node(line));
 				}
 			}
@@ -83,6 +86,8 @@ public class FolderMain {
 				if (!"".equals(entry.getKey())) {
 					defaultKey = "";
 				}
+				
+				System.out.println("Analizando : " + entry.getKey() + " , " + entry.getValue());
 
 				String parentKey = getParentKey(entry.getKey(), defaultKey);
 

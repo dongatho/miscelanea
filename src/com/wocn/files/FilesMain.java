@@ -15,15 +15,27 @@ public class FilesMain {
 	 */
 	public static void main(String[] args) {
 
-		fixFile();		
+		String path = "C://borrar/W2 Classification Tools and Techniques";
+
+		String structs[] = {
+				"1.1-A Statistical Modeling Approach.txt",
+				"1.2-Testing Our Statistical Mode.txt",
+				"1.3-Naive Bayes Rule.txt",
+				"2.1-Decision Tree Induction.txt",
+				"2.2-Constructing Decision Trees.txt",
+				"2.3-Decision Tree.txt",
+				"3.1-The Spark Library (MLlib).txt",
+				"3.2-Spark MLlib Classification.txt"
+				};
+
+		for(String file: structs){
+			fixFile(file, path);	
+		}		
 		
 	}		
 	
 
-	public static void fixFile() {
-		
-		String fileName = "1.1-Overview of HDFS Architecture_c.txt";
-		String path = "C://borrar";
+	public static void fixFile(String fileName, String path) {
 		
 		// Step1 : Reemplaza -- por [Slide ]  
 		String oldText = "--";
